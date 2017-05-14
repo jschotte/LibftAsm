@@ -1,15 +1,15 @@
-global _ft_isalpha
+global _ft_isxdigit
 
 segment .text
 
-_ft_isalpha:
-	cmp rdi, 'A'
+_ft_isxdigit:
+	cmp rdi, '0'
 	jl no 
-	cmp rdi, 'Z'
+	cmp rdi, '9'
 	jle yes
 	cmp rdi, 'a'
 	jl no
-	cmp rdi, 'z'
+	cmp rdi, 'f'
 	jle yes
 	jmp no
 
@@ -20,4 +20,3 @@ no:
 yes:
 	mov rax, 1
 	ret
- 

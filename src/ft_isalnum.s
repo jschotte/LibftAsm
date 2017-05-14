@@ -1,8 +1,12 @@
-global _ft_isalpha
+global _ft_isalnum
 
 segment .text
 
-_ft_isalpha:
+_ft_isalnum:
+	cmp rdi, '0'
+	jl no
+	cmp rdi, '9'
+	jle yes
 	cmp rdi, 'A'
 	jl no 
 	cmp rdi, 'Z'
